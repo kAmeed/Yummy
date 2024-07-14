@@ -1,0 +1,244 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Yummy</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  </head>
+  <body class="bg-black">
+    <div class="loading">
+      <span class="loader"></span>
+    </div>
+
+    <nav
+      class="navbar navbar-dark bg-white h-100 position-fixed top-0 start-0 bottom-0 z-3"
+    >
+      <div
+        class="container-fluid d-flex h-100 flex-column justify-content-between align-items-center"
+      >
+        <img src="images/logo.png" class="w-75 mx-auto m-0 p-0" alt="Logo" />
+
+        <i
+          class="fa-solid fa-bars fa-2x"
+          id="slideUp"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasDarkNavbar"
+          aria-controls="offcanvasDarkNavbar"
+          aria-label="Toggle navigation"
+        ></i>
+
+        <div class="social d-flex gap-2">
+          <i class="fa-solid fa-globe"></i>
+          <i class="fa-solid fa-share-nodes"></i>
+        </div>
+      </div>
+
+      <div
+        class="offcanvas offcanvas-start text-bg-dark"
+        tabindex="-1"
+        id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Yummy</h5>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mb-5 pb-5">
+            <li class="nav-item">
+              <a
+                id="home"
+                class="nav-link active fs-3"
+                aria-current="page"
+                href="#home"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item position-relative">
+              <a id="search" class="nav-link fs-3" href="#search">Search</a>
+            </li>
+            <li class="nav-item position-relative">
+              <a id="categories" class="nav-link fs-3" href="#">Categories</a>
+            </li>
+            <li class="nav-item position-relative">
+              <a id="area" class="nav-link fs-3" href="#area">Area</a>
+            </li>
+            <li class="nav-item position-relative">
+              <a id="ingredients" class="nav-link fs-3" href="#ingredients"
+                >Ingredients</a
+              >
+            </li>
+            <li class="nav-item position-relative">
+              <a id="contact" class="nav-link fs-3" href="#contact"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+          <div class="social mt-5 pt-5"><i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <p>Copyright Â© 2019 All Rights
+              Reserved.</p></div>
+          
+        </div>
+      </div>
+    </nav>
+
+    <div class="front container mt-5">
+      <div class="row gy-3"></div>
+    </div>
+
+    <div class="categories container mt-5">
+      <div class="row gy-3"></div>
+    </div>
+
+    <div class="area container mt-5">
+      <div class="row gy-3"></div>
+    </div>
+
+    <div class="ingredients container mt-5">
+      <div class="row gy-3"></div>
+    </div>
+
+    <div class="countryFood container mt-5">
+      <div class="row gy-3"></div>
+    </div>
+
+    <div class="ingFood container mt-5">
+      <div class="row gy-3"></div>
+    </div>
+    <div class="catFood container mt-5">
+      <div class="row gy-3"></div>
+    </div>
+
+    <div class="search container mt-5 justify-content-center text-center">
+      <div class="row">
+        <div class="col-md-6">
+          <input
+            class="form-control mt-3"
+            id="FoodInputName"
+            oninput="getFoodFirst()"
+            type="text"
+            placeholder="Search by Name"
+          />
+        </div>
+        <div class="col-md-6">
+          <input
+            class="form-control mt-3"
+            id="foodFirstLetter"
+            oninput="getFoodLetter()"
+            maxlength="1"
+            type="text"
+            placeholder="Search by First Letter"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="contact container mt-5 gap-3">
+      <div class="row">
+        <div class="col-md-6">
+          <input
+          oninput="validateInputs(this)"
+          id="userName"
+            class="form-control mt-3"
+            type="text"
+            placeholder="Enter Your Name"
+          />
+          <div class="alert alert-danger mt-2 d-none">
+            Product Name MUST start with a capital letter
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input
+          oninput="validateInputs(this)"
+          id="userEmail"
+            class="form-control mt-3"
+            type="email"
+            placeholder="Enter Your Email"
+          />
+          <div class="alert alert-danger mt-2 d-none">
+            Please Enter a Valid Email Address
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input
+          oninput="validateInputs(this)"
+          id="userPhone"
+            class="form-control mt-3"
+            type="number"
+            placeholder="Enter Your Phone"
+          />
+          <div class="alert alert-danger mt-2 d-none">
+            Enter a Valid Phone Number of 11 Numbers
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input
+          oninput="validateInputs(this)"
+          id="userAge"
+            class="form-control mt-3"
+            type="number"
+            placeholder="Enter Your Age"
+          />
+          <div class="alert alert-danger mt-2 d-none">
+            You must Be At Least 10 and Not Exceed 100
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input
+          oninput="validateInputs(this)"
+          id="userPassword"
+            class="form-control mt-3"
+            type="text"
+            placeholder="Enter Your Password"
+          />
+          <div class="alert alert-danger mt-2 d-none">
+            Enter Password with a min of 5 characters
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input
+          oninput="validateInputs(this)"
+          id="rePassword"
+            class="form-control mt-3"
+            type="text"
+            placeholder="Re-enter Your Password"
+          />
+          <div class="alert alert-danger mt-2 d-none">
+            Product Name MUST start with a capital letter
+          </div>
+        </div>
+        <div class="col-md-12 d-flex justify-content-center align-items-center">
+          <button class="btn btn-danger mt-3">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="details container mt-5">
+      <div class="row">
+      </div>
+    </div>
+
+    <div class="firstName container mt-5">
+      <div class="row gy-3"></div>
+    </div>
+    <div class="firstLetter container mt-5">
+      <div class="row gy-3"></div>
+
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
